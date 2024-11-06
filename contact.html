@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacalla-Guevarra Dental Clinic</title>
+    <link rel="icon" href="images/logo4.png" types="image/x-icon">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- swiper css link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/contact.css">
+
+    <!-- fontawesome icons  -->
+    <script src="https://kit.fontawesome.com/6647775c08.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header class="header">
+            
+        <a href="index.html"><img src="images/logo2.png" alt="Bacalla Logo" class="logo"></a>
+        <nav class="navbar">
+            <a href="index.html">Why Bacalla-Guevarra</a>
+       <div class="dropdown" id="dropdown">
+            <button class="dropdown-btn" >Services</button>
+            <div class="dropdown-content">
+                <a href="cleaning.html" style="font-size: 1.5rem;">CLEANING</a>
+                <a href="restoration.html" style="font-size: 1.5rem;">RESTORATION</a>
+                <a href="extraction.html" style="font-size: 1.5rem;">EXTRACTION</a>
+                <a href="dentures.html" style="font-size: 1.5rem;">DENTURES</a>
+                <a href="orthodontics.html" style="font-size: 1.5rem;">ORTHODONTICS</a>
+            </div>
+        </div>
+            <a href="client.html">Clients</a>
+            <a href="contact.html" class="active">Contact Us</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header end -->
+
+    <!-- Messenger Button -->
+    <img id="chat-icon" src="images/Bacalla Messenger Logo.png" alt="Chat with us" onclick="toggleChat()">
+
+    <div id="chat-window">
+        <div id="chat-header">
+            <img src="images/logochatbot.png" alt="Dental Clinic Logo" id="chat-logo">
+            <span>Hello there,<br> I'm Arnie the Chatbot!</span>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        <div id="chat-content">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Ask me something..." onkeypress="handleKeyPress(event)">
+    </div>
+    
+    <!-- section -->
+
+
+    <h2 class="contact-title">Contact Us</h2>
+    <p class="contact-description">Feel free to contact us. We're here to assist you!</p>
+    
+    <section class="contact-section">
+        <div class="contact-container">
+            <form class="contact-form">
+                <label style="font-size: 1.3rem;" for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label style="font-size: 1.3rem;" for="email">Phone:</label>
+                <input type="email" id="phone" name="phone" required>
+                
+                <label style="font-size: 1.3rem;" for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label style="font-size: 1.3rem;" for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.6756647169523!2d121.06017417407968!3d14.560530678058466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c863da7c8bfd%3A0x2a967f317f21ddff!2sBacalla%20-%20Guevarra%20Dental%20Clinic!5e0!3m2!1sen!2sph!4v1730108263048!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of section -->
+
+    <!-- footer -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>address</h3>
+                <p>33-A 33-A, J.P. Rizal Ext, Taguig, 1215 Metro Manila</p>
+                <div class="share">
+                    <a href="https://www.facebook.com/arns.bacallaguevarra" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>E-mail</h3>
+                <a href="#" class="link">sample@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>Call us</h3>
+                <p>+63 998 923 7665</p>
+            </div>
+
+            <div class="box">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday : 10:00am - 5:00pm <br>
+                   Saturday : 10:00am - 12:00nn    
+                </p>
+            </div>
+
+        </div>
+
+        <div class="credit">©2024&nbsp;<span>Bacalla-Guevarra Dental Clinic</span> | All rights reserved.</div>
+
+    </section>
+
+    <!-- footer ends -->
+
+    <!-- swiper js link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <!-- custom js testimonials link  -->
+    <script src="js/testimonial.js"></script>
+
+    <!-- custom js dropdown link  -->
+    <script src="js/dropdown.js"></script>
+
+    <!-- custom js chatbot link  -->
+    <script src="js/message.js"></script>
+
+</body>
+</html>

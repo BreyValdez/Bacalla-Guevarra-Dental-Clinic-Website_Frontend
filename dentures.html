@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacalla-Guevarra Dental Clinic</title>
+    <link rel="icon" href="images/logo4.png" types="image/x-icon">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- swiper css link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/dentures.css">
+
+    <!-- fontawesome icons  -->
+    <script src="https://kit.fontawesome.com/6647775c08.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header class="header">
+            
+        <a href="index.html"><img src="images/logo2.png" alt="Bacalla Logo" class="logo"></a>
+        <nav class="navbar">
+            <a href="index.html">Why Bacalla-Guevarra</a>
+       <div class="dropdown" id="dropdown">
+            <button class="dropdown-btn" style="color: #192a48;" >Services</button>
+            <div class="dropdown-content">
+                <a href="cleaning.html" style="font-size: 1.5rem;">CLEANING</a>
+                <a href="restoration.html" style="font-size: 1.5rem;">RESTORATION</a>
+                <a href="extraction.html" style="font-size: 1.5rem;">EXTRACTION</a>
+                <a href="dentures.html" style="font-size: 1.5rem;">DENTURES</a>
+                <a href="orthodontics.html" style="font-size: 1.5rem;">ORTHODONTICS</a>
+            </div>
+        </div>
+            <a href="client.html">Clients</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header end -->
+
+    <!-- Messenger Button -->
+    <img id="chat-icon" src="images/Bacalla Messenger Logo.png" alt="Chat with us" onclick="toggleChat()">
+
+    <div id="chat-window">
+        <div id="chat-header">
+            <img src="images/logochatbot.png" alt="Dental Clinic Logo" id="chat-logo">
+            <span>Hello there,<br> I'm Arnie the Chatbot!</span>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        <div id="chat-content">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Ask me something..." onkeypress="handleKeyPress(event)">
+    </div>
+
+    <!-- home -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>DENTURES</h3>
+        </div>
+
+
+    </section>
+
+    <!-- home end -->
+
+    <!-- about us section-->
+
+    <section class="about" id="about">
+
+        <div class="row">
+
+            <div class="image">
+                <img src="images/dentures1.1.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <h3>Why Choose Bacalla-Guevarra for Dentures?</h3>
+                <p>Missing teeth can impact your confidence and oral health. At Bacalla-Guevarra Dental Clinic, we offer custom-made dentures to restore your smile and improve your quality of life. Our experienced dentists will work with you to create natural-looking dentures that fit comfortably and function seamlessly.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- about end -->
+
+    <section class="content-section">
+        <div class="container">
+            <h1 class="title">What is Tooth Dentures?</h1>
+            <p class="description">Dentures are removable dental appliances that replace missing teeth and restore your smile. They are made of acrylic or metal and are designed to fit snugly over your gums. Dentures can be either partial or full.</p>
+        </div>
+        <div class="content">
+            <div class="left-side">
+                <p class="additional-description">
+                    &#10625; Partial dentures replace some missing teeth and are held in place by clasps that attach to your existing teeth.<br>
+                    &#10625; Full dentures replace all of the teeth in your upper or lower jaw.<br><br>
+                   Dentures can improve your appearance, speech, and chewing ability. They can also help prevent facial muscle sagging and maintain the shape of your face.<br>
+                </p>
+            </div>
+            <div class="right-side">
+                <img src="images/dentures1.jpg" alt="services1.2" class="images">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-two">
+        <div class="title-two">We offer a comprehensive range of Dentures services.</div>
+        <div class="border"></div>
+        <div class="description-two">At Bacalla-Guevarra Dental Clinic, our dentist provides personalized denture solutions tailored to fit comfortably and restore confidence in your smile.</div>
+
+        <a href="https://www.facebook.com/arns.bacallaguevarra"><button class="button-click">Click here to make an appointment!</button></a>
+    </section>
+    
+    <!-- footer -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box-footer">
+                <h3>address</h3>
+                <p>33-A 33-A, J.P. Rizal Ext, Taguig, 1215 Metro Manila</p>
+                <div class="share">
+                    <a href="https://www.facebook.com/arns.bacallaguevarra" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <h3>E-mail</h3>
+                <a href="#" class="link">sample@gmail.com</a>
+            </div>
+
+            <div class="box-footer">
+                <h3>Call us</h3>
+                <p>+63 998 923 7665</p>
+            </div>
+
+            <div class="box-footer">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday : 10:00am - 5:00pm <br>
+                   Saturday : 10:00am - 12:00nn    
+                </p>
+            </div>
+
+        </div>
+
+        <div class="credit">©2024&nbsp;<span>Bacalla-Guevarra Clinic</span> | All rights reserved.</div>
+
+    </section>
+
+    <!-- footer ends -->
+
+    <!-- swiper js link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <!-- custom js testimonials link  -->
+    <script src="js/testimonial.js"></script>
+
+    <!-- custom js dropdown link  -->
+    <script src="js/dropdown.js"></script>
+
+    <!-- custom js chatbot link  -->
+    <script src="js/message.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,733 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --primary:#1f2e88;
+    --secondary:#2f66d4;
+    --hover: #a2d9f5;
+    --black:#333;
+    --white:#fff;
+    --navyblue:#192a48;
+    --lightblue: #9cb4df;
+    --teal: #45c2c7;
+    --lightteal: #e0f3f3;
+    --light-color:#666;
+    --light-bg:#eee;
+    --border:.2rem solid rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1rem rgb(69,194,199);
+    --shadow:0 .5rem 1rem rgb(69,194,199);
+    --box-shadow1:0 .5rem 1rem rgb(25,42,72);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--navyblue);
+    border-radius: 5rem;
+}
+
+section{
+    padding: 5rem 7%;
+}
+
+.heading{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--navyblue);
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: .5rem;
+}
+
+.header .navbar a.active {
+    color: var(--navyblue);
+  }
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    box-shadow: 0 4px 10px var(--navyblue);
+    transition: transform 0.3s;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--teal); 
+    background-color: var(--navyblue);
+}
+
+.fa-message:hover{
+    color: var(--white);
+}
+
+.btn:hover{
+    color: var(--navyblue);
+    background-color: var(--teal);
+    transform: translateY(-5px);
+}
+
+/* header */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--teal);
+    box-shadow: var(--box-shadow1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    border-bottom: 5px solid #192a48; /* Bottom line */
+}
+
+.logo {
+       width: 110px; /* Adjust logo width */
+       height: auto; /* Maintain aspect ratio */
+       margin-right: 20px; /* Space between logo and text */
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--white);
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: var(--navyblue);
+}
+
+.header .btn{
+    margin-top: 0;
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    margin-left: 1.7rem;
+    display: none;
+}
+
+#menu-btn:hover{
+    color: var(--primary);
+}
+
+/* header end */
+
+/* Dropdown container */
+        
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button styled like navbar links */
+.dropdown-btn {
+    color: var(--white);
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+/* Arrow icon */
+.dropdown-btn::after {
+    content: "▼"; /* Down arrow */
+    margin-left: 5px;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+/* Toggle to up arrow */
+.dropdown.active .dropdown-btn::after {
+    content: "▲"; /* Up arrow */
+}
+
+/* Hover effect on dropdown button */
+.dropdown-btn:hover {
+    color: var(--navyblue);
+    border-radius: 4px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--navyblue);
+    min-width: 220px;
+    height: 260px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid white;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown.active .dropdown-content {
+     display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--lightteal);
+    color: var(--navyblue);
+}
+
+/* Messenger */
+
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+#chat-window {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    width: 300px;
+    background-color: var(--lightteal);
+    border: 1px solid var(--teal);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px var(--teal);
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+
+#chat-header {
+    background-color: var(--navyblue);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#chat-header span {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#chat-logo {
+    width: 70px; /* Adjust size as needed */
+    height: 70px;
+    border-radius: 50%; /* Optional: makes the logo circular */
+}
+
+
+#chat-content {
+    height: 200px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#chat-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#chat-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+#chat-content::-webkit-scrollbar-track {
+    background: var(--lightteal);
+    border-radius: 10px;
+}
+
+#chat-content::-webkit-scrollbar-thumb {
+    background-color: var(--navyblue);
+    border-radius: 10px;
+    border: 1px solid var(--white);
+}
+
+#chat-content::-webkit-scrollbar-thumb:hover {
+    background-color: var(--teal);
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#user-input {
+    width: calc(100% - 0px);
+    padding: 10px;
+    border: none;
+    border-top: 3px solid var(--navyblue);
+    outline: none;
+}
+
+#messages .user {
+    align-self: flex-end;
+    background-color: var(--teal);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+#messages .bot {
+    align-self: flex-start;
+    background-color: var(--navyblue);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+#chat-header button {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+#chat-header button:hover {
+    background-color: var(--lightteal);
+    color: var(--black);
+}
+
+/* messenger end */
+
+
+/* home */
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../images/bg2.png) no-repeat;
+    box-shadow: 10px 10px 20px var(--shadow);
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 60rem;
+    padding-left: 6rem;
+    padding-top: 10rem;
+}
+
+.home .content h3{
+    font-size: 3.2rem;
+    color: var(--navyblue);
+    line-height: 1.2;
+}
+
+.home .content p{
+    line-height: 2;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem 0;
+    text-align: justify;
+}
+
+/* home end */
+
+/* about us */
+
+.about .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about .row .image{
+    flex: 1 1 20rem;
+}
+
+.about .row .image img{
+    width: 95%;
+    height: 60%;
+    border-radius: 5%;
+    border: 2px solid var(--navyblue);
+}
+
+.about .row .content{
+    flex: 1 1 70rem;
+}
+
+.about .row .content h3{
+    color: var(--navyblue);
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+.about .row .content p{
+    font-size: 1.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+    line-height: 2;
+    text-align: justify;
+}
+
+/* about end */
+
+/* Container styling */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lightteal);
+    padding: 50px 20px;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.vision-content,
+.mission-content,
+.core-values-content {
+    flex-direction: row;
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--navyblue);
+    transition: transform 0.3s;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box h3 {
+    color: var(--navyblue);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.box p {
+    font-size: 1.5rem;
+    color: var(--black);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.box ul {
+    list-style-type: disc; /* Bullets */
+    padding-left: 20px; /* Indentation for the bullets */
+    font-size: 16px; /* Font size for the list items */
+    color: #666; /* Color for the list items */
+}
+
+/* Styling for the image container */
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 3px solid var(--navyblue);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* caption start */
+
+.caption{
+    background: var(--white);
+}
+
+/* caption ends */
+
+/* footer */
+.footer{
+    background: var(--navyblue);
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.footer .box-container .box-footer h3{
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    color: var(--teal);
+}
+
+.footer .box-container .box-footer p{
+    font-size: 1.5rem;
+    padding: .5rem 0;
+    line-height: 2;
+    color: var(--white);
+}
+
+.footer .box-container .box-footer .share{
+    margin-top: 2rem;
+}
+
+.footer .box-container .box-footer .share a{
+    height: 4.5rem;
+    width: 4.5rem;
+    background: var(--teal);
+    color: var(--white);
+    line-height: 4.5rem;
+    border-radius: 10%;
+    font-size: 1.7rem;
+    margin-right: .3rem;
+    text-align: center;
+}
+
+.footer .box-container .box-footer .share a:hover{
+    background: var(--white);
+    color: var(--navyblue);
+}
+
+.footer .box-container .box-footer .link{
+    display: block;
+    font-size: 1.7rem;
+    line-height: 2;
+    color: violet;
+    padding: .5rem 0;
+}
+
+.footer .box-container .box-footer .link:hover{
+    color: var(--white);
+}
+
+.footer .credit{
+    margin-top: 3rem;
+    padding-top: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--white);
+    border-top: .1rem solid var(--teal);
+}
+
+.footer .credit span{
+    color: var(--teal);
+}
+
+
+/* footer ends */
+
+/* media queries */
+
+@media (max-width: 991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header .btn{
+        display: none;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+    .section-container h2 {
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+
+    .header .navbar{
+        border-bottom: 5px solid var(--navyblue);
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: var(--teal);
+        border-top: var(--border);
+        padding: 1rem 0;
+        text-align: center;
+        flex-flow: column;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        padding: 1rem 0;
+        font-size: 2rem;
+    }
+
+    .home{
+        background-position: left;
+        background: url(../images/bg2.1.png) no-repeat;
+        background-size: cover;
+    }
+
+    .home .content{
+        max-width: 50rem;
+        padding-left: 3rem;
+    }
+
+    .home .content h3{
+        font-size: 4rem;
+    }
+
+    /* Dropdown in mobile view */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        height: 190px;
+    }
+
+    .dropdown-content a {
+        color: var(--navyblue);
+        padding: 10px 20px;
+        border-bottom: none;
+
+    }
+
+    .dropdown .dropdown-content a {
+        color: var(--black);
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }
+
+    .content-section {
+        flex-direction: column;
+    }
+    
+    /* Place the image below the Mission box in mobile view */
+    .mission-content {
+        flex-direction: column-reverse;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .box {
+        margin-bottom: none;
+    }
+
+}
+
+@media(max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .home .content h3{
+        font-size: 3rem;
+    }
+
+    .section-container {
+        padding: 30px 10px;
+    }
+
+    .section-container h2 {
+        font-size: 20px;
+    }
+
+    .box{
+        margin-bottom: none;
+    }
+
+    .box h3 {
+        font-size: 18px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    .box ul {
+        font-size: 14px; /* Adjust the font size for mobile */
+    }
+
+}

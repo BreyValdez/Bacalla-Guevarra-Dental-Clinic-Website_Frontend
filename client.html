@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacalla-Guevarra Dental Clinic</title>
+    <link rel="icon" href="images/logo4.png" types="image/x-icon">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- swiper css link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/client.css">
+
+    <!-- fontawesome icons  -->
+    <script src="https://kit.fontawesome.com/6647775c08.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header class="header">
+            
+        <a href="index.html"><img src="images/logo2.png" alt="Bacalla Logo" class="logo"></a>
+        <nav class="navbar">
+            <a href="index.html">Why Bacalla-Guevarra</a>
+        <div class="dropdown" id="dropdown">
+            <button class="dropdown-btn" >Services</button>
+            <div class="dropdown-content">
+                <a href="cleaning.html" style="font-size: 1.5rem;">CLEANING</a>
+                <a href="restoration.html" style="font-size: 1.5rem;">RESTORATION</a>
+                <a href="extraction.html" style="font-size: 1.5rem;">EXTRACTION</a>
+                <a href="dentures.html" style="font-size: 1.5rem;">DENTURES</a>
+                <a href="orthodontics.html" style="font-size: 1.5rem;">ORTHODONTICS</a>
+            </div>
+        </div>
+            <a href="client.html" class="active">Clients</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header end -->
+
+    <!-- Messenger Button -->
+    <img id="chat-icon" src="images/Bacalla Messenger Logo.png" alt="Chat with us" onclick="toggleChat()">
+
+    <div id="chat-window">
+        <div id="chat-header">
+            <img src="images/logochatbot.png" alt="Dental Clinic Logo" id="chat-logo">
+            <span>Hello there,<br> I'm Arnie the Chatbot!</span>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        <div id="chat-content">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Ask me something..." onkeypress="handleKeyPress(event)">
+    </div>
+
+    <!-- caption -->
+
+    <section class="caption">
+
+        <h1 style="
+        font-size: 2rem; 
+        text-align: left; 
+        color: #192a48; 
+        text-transform: unset; 
+        font-weight: bolder;
+        margin-bottom: 1rem;
+        margin-top: 6rem;">Where smiles come to life.</h1>
+
+        <p style="
+        font-size: 1.5rem; 
+        text-align: left; 
+        color: black; 
+        text-transform: unset; 
+        font-weight: bold;
+        margin-bottom: 3rem;
+        font-style: italic;">"Bacalla-Guevarra Dental Clinic offers top-notch dental care for your needs. From routine check-ups to advanced treatments, our skilled dentist ensures comfort and safety."</p>
+
+
+    </section>
+
+    <!-- caption ends-->
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="heading">What Our Clients Have To Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <div class="testimonial-card">
+                    <img src="images/pic1.jpg" alt="Patient 1" class="patient-photo">
+                    <div class="star-rating">
+                        ★★★★★
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="patient-feedback">"The staff is incredibly friendly, and they made me feel at ease throughout my entire visit. My smile has never looked better!"</p>
+                        <h4 class="patient-name">- Jane Doe</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/pic1.jpg" alt="Patient 2" class="patient-photo">
+                    <div class="star-rating">
+                        ★★★★★
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="patient-feedback">"Dr. Smith is a fantastic dentist. He took the time to explain every procedure and made sure I was comfortable. Highly recommended!"</p>
+                        <h4 class="patient-name">- John Smith</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/pic1.jpg" alt="Patient 3" class="patient-photo">
+                    <div class="star-rating">
+                        ★★★★★
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="patient-feedback">"I've always been nervous about visiting the dentist, but this clinic changed my perspective. They are patient, caring, and professional."</p>
+                        <h4 class="patient-name">- Sarah Lee</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="prev-btn">‹</button>
+            <button class="next-btn">›</button>
+        </div>
+    </section>
+
+    <!-- blog -->
+
+    <section class="blog" id="blog">
+
+        <h1 style="font-size: 2rem; 
+        text-align: center; 
+        color: #192a48; 
+        text-transform: unset; 
+        margin-bottom: 1rem;">Our Clients' Dental Transformations</h1>
+
+        <p style="font-size: 1.5rem; 
+        text-align: center; 
+        color: var(--navyblue); 
+        text-transform: unset; 
+        margin-bottom: 3rem;">At Bacalla-Guevarra, we help our patients achieve their dream smiles.<br> Our clients' stories are a testament to the power of quality dental care.</p>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/patient1.png" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">Braces</a>
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-calendar"></i> October 19, 2024 </a>
+                    </div>
+                    <h3>Jherson Sangcada</h3>
+                    <p>Getting braces at Bacalla-Guevarra was a great decision. The dentist made the process easy, and the results were amazing. Highly recommend!</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/patient1.png" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">Services taken</a>
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-calendar"></i> Date posted </a>
+                    </div>
+                    <h3>Name of Client</h3>
+                    <p>Client feedback</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/patient1.png" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">Services taken</a>
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-calendar"></i> Date posted </a>
+                    </div>
+                    <h3>Name of Client</h3>
+                    <p>Client feedback</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- blog ends -->
+
+    <!-- footer -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>address</h3>
+                <p>33-A 33-A, J.P. Rizal Ext, Taguig, 1215 Metro Manila</p>
+                <div class="share">
+                    <a href="https://www.facebook.com/arns.bacallaguevarra" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>E-mail</h3>
+                <a href="#" class="link">sample@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>Call us</h3>
+                <p>+63 998 923 7665</p>
+            </div>
+
+            <div class="box">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday : 10:00am - 5:00pm <br>
+                   Saturday : 10:00am - 12:00nn    
+                </p>
+            </div>
+
+        </div>
+
+        <div class="credit">©2024&nbsp;<span>Bacalla-Guevarra Dental Clinic</span> | All rights reserved.</div>
+
+    </section>
+
+    <!-- footer ends -->
+
+    <!-- swiper js link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/client.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+     <!-- custom js dropdown link  -->
+    <script src="js/dropdown.js"></script>
+
+     <!-- custom js chatbot link  -->
+    <script src="js/message.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,621 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --primary:#1f2e88;
+    --secondary:#2f66d4;
+    --hover: #a2d9f5;
+    --black:#333;
+    --white:#fff;
+    --navyblue:#192a48;
+    --lightblue: #9cb4df;
+    --teal: #45c2c7;
+    --lightteal: #e0f3f3;
+    --light-color:#666;
+    --light-bg:#eee;
+    --border:.2rem solid rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1rem rgb(69,194,199);
+    --shadow:0 .5rem 1rem rgb(69,194,199);
+    --box-shadow1:0 .5rem 1rem rgb(25,42,72);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--navyblue);
+    border-radius: 5rem;
+}
+
+section{
+    padding: 5rem 7%;
+}
+
+.heading{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--navyblue);
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: .5rem;
+}
+
+.header .navbar a.active {
+    color: var(--navyblue);
+  }
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--teal); 
+    background-color: var(--navyblue);
+}
+
+.fa-message:hover{
+    color: var(--white);
+}
+
+.btn:hover{
+    color: var(--white);
+}
+
+/* header */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--teal);
+    box-shadow: var(--box-shadow1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    border-bottom: 5px solid #192a48; /* Bottom line */
+}
+
+.logo {
+       width: 110px; /* Adjust logo width */
+       height: auto; /* Maintain aspect ratio */
+       margin-right: 20px; /* Space between logo and text */
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--white);
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: var(--navyblue);
+}
+
+.header .btn{
+    margin-top: 0;
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    margin-left: 1.7rem;
+    display: none;
+}
+
+#menu-btn:hover{
+    color: var(--primary);
+}
+
+/* header end */
+
+/* Dropdown container */
+        
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button styled like navbar links */
+.dropdown-btn {
+    color: var(--white);
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+/* Arrow icon */
+.dropdown-btn::after {
+    content: "▼"; /* Down arrow */
+    margin-left: 5px;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+/* Toggle to up arrow */
+.dropdown.active .dropdown-btn::after {
+    content: "▲"; /* Up arrow */
+}
+
+/* Hover effect on dropdown button */
+.dropdown-btn:hover {
+    color: var(--navyblue);
+    border-radius: 4px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--navyblue);
+    min-width: 220px;
+    height: 260px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid white;
+    transition: background-color 0.2s ease;
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown-content {
+     display: block;
+}
+
+/* Dropdown link hover effect */
+.dropdown-content a:hover {
+    background-color: var(--lightteal);
+    color: var(--navyblue);
+}
+
+/* Messenger */
+
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+#chat-window {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    width: 300px;
+    background-color: var(--lightteal);
+    border: 1px solid var(--teal);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px var(--teal);
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+
+#chat-header {
+    background-color: var(--navyblue);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#chat-header span {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#chat-logo {
+    width: 70px; /* Adjust size as needed */
+    height: 70px;
+    border-radius: 50%; /* Optional: makes the logo circular */
+}
+
+
+#chat-content {
+    height: 200px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#chat-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#chat-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+#chat-content::-webkit-scrollbar-track {
+    background: var(--lightteal);
+    border-radius: 10px;
+}
+
+#chat-content::-webkit-scrollbar-thumb {
+    background-color: var(--navyblue);
+    border-radius: 10px;
+    border: 1px solid var(--white);
+}
+
+#chat-content::-webkit-scrollbar-thumb:hover {
+    background-color: var(--teal);
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#user-input {
+    width: calc(100% - 0px);
+    padding: 10px;
+    border: none;
+    border-top: 3px solid var(--navyblue);
+    outline: none;
+}
+
+#messages .user {
+    align-self: flex-end;
+    background-color: var(--teal);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+#messages .bot {
+    align-self: flex-start;
+    background-color: var(--navyblue);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+#chat-header button {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+#chat-header button:hover {
+    background-color: var(--lightteal);
+    color: var(--black);
+}
+
+/* messenger end */
+
+.contact-title {
+    text-align: center; /* Center the title */
+    margin-top: 10%;
+    font-size: 3rem;
+    color: var(--navyblue);
+}
+
+.contact-description {
+    text-align: center; /* Center the paragraph */
+    margin: 10px 0 30px; /* Add margin above and below the paragraph */
+    color: var(--black); /* Optional: set a color for the text */
+    font-size: 1.9rem; /* Optional: set font size */
+    padding: 10px 20px; /* Add padding around the paragraph */
+}
+
+.contact-section {
+    padding: 20px; /* Reduced padding for mobile view */
+    background-color: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    margin-bottom: 5%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--teal);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch; /* Stretch items to have equal height */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.contact-form {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid var(--navyblue);
+    border-radius: 4px;
+    min-width: 250px; /* Set a minimum width */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--navyblue);
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: var(--navyblue);
+    color: var(--teal);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px var(--navyblue);
+    transition: transform 0.3s;
+}
+
+.contact-form button:hover {
+    border: 1px solid var(--navyblue);
+    border-radius: 5px;
+    color: var(--navyblue);
+    background-color: var(--teal);
+    transform: translateY(-5px);
+}
+
+.map-container {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid var(--navyblue);
+    border-radius: 4px;
+    min-width: 250px; /* Set a minimum width */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 350px; /* Fixed height for the map */
+    border: 0;
+}
+
+/* footer */
+.footer{
+    background: var(--navyblue);
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    color: var(--teal);
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    padding: .5rem 0;
+    line-height: 2;
+    color: var(--white);
+}
+
+.footer .box-container .box .share{
+    margin-top: 2rem;
+}
+
+.footer .box-container .box .share a{
+    height: 4.5rem;
+    width: 4.5rem;
+    background: var(--teal);
+    color: var(--white);
+    line-height: 4.5rem;
+    border-radius: 10%;
+    font-size: 1.7rem;
+    margin-right: .3rem;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover{
+    background: var(--white);
+    color: var(--navyblue);
+}
+
+.footer .box-container .box .link{
+    display: block;
+    font-size: 1.7rem;
+    line-height: 2;
+    color: violet;
+    padding: .5rem 0;
+}
+
+.footer .box-container .box .link:hover{
+    color: var(--white);
+}
+
+.footer .credit{
+    margin-top: 3rem;
+    padding-top: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--white);
+    border-top: .1rem solid var(--teal);
+}
+
+.footer .credit span{
+    color: var(--teal);
+}
+
+
+/* footer ends */
+
+/* media queries */
+
+@media (max-width: 991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header .btn{
+        display: none;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+
+    .header .navbar{
+        border-bottom: 5px solid var(--navyblue);
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: var(--teal);
+        border-top: var(--border);
+        padding: 1rem 0;
+        text-align: center;
+        flex-flow: column;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        padding: 1rem 0;
+        font-size: 2rem;
+    }
+
+    /* Dropdown in mobile view */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        height: 190px;
+    }
+
+    .dropdown-content a {
+        color: var(--navyblue);
+        padding: 10px 20px;
+        border-bottom: none;
+
+    }
+
+    .dropdown .dropdown-content a {
+        color: var(--black);
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack the items vertically on smaller screens */
+    }
+
+    .contact-form {
+        margin-right: 0; /* Remove margin on smaller screens */
+        margin-bottom: 20px; /* Add space between form and map */
+    }
+
+    .map-container {
+        margin-bottom: 20px; /* Add space between map and form */
+    }
+
+    .map-container iframe {
+        height: 200px; /* Reduce height for smaller screens */
+    }
+
+    .contact-section {
+        padding: 10px; /* Adjust padding for mobile view */
+        max-width: 400px;
+    }
+
+    .contact-title{
+        margin-top: 25%;
+    }
+
+}
+
+@media(max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
